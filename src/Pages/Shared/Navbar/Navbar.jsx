@@ -86,13 +86,13 @@ const Header = () => {
                         <div className="lg:navbar-start lg:w-auto w-3/2">
                             <div className="flex items-center">
                                 <div className="flex items-center">
-                                    {/* <div className="avatar hidden md:block mr-1">
+                                    <div className="avatar hidden md:block mr-1">
                                         <div className="md:w-12 w-10 rounded-full">
                                             <Link to='/'>
-                                                <img src="https://img.freepik.com/free-photo/delicious-burger-with-many-ingredients-isolated-white-background-tasty-cheeseburger-splash-sauce_90220-1266.jpg?w=740&t=st=1699466113~exp=1699466713~hmac=3607eaccb86812f98538d14a38e39af830f742b407a085eb3e1306b074ea2fb9" />
+                                                <img src="https://img.freepik.com/free-vector/creative-project-management-concept-flat-style_23-2147792531.jpg?w=740&t=st=1703093078~exp=1703093678~hmac=c7e39163839241961e7c30d687158c1ea395de4e8d32ba5f2d43e8b80cab5c43" />
                                             </Link>
                                         </div>
-                                    </div> */}
+                                    </div>
                                     <div className="dropdown">
                                         <label tabIndex={0} className="btn-ghost lg:hidden">
                                             <svg xmlns="http://www.w3.org/2000/svg" height="20" width="22" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" /></svg>
