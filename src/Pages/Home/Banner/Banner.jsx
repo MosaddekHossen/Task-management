@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const Banner = () => {
     return (
@@ -8,7 +9,7 @@ const Banner = () => {
                     <div className="max-w-md">
                         <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
                         <p className="mb-5">Job task analysis (JTA), involves an examination and breakdown of the skills and demands specific to a particular task, role or duties within the workplace.</p>
-                        <button className="btn btn-primary">Let`s Explore</button>
+                        <Link to={"/dashboard"}><button className="btn btn-primary">Let`s Explore</button></Link>
                     </div>
                 </div>
             </div>

@@ -37,7 +37,7 @@ const Login = () => {
                 // navigate('/');
                 navigate(location?.state ? location?.state : '/');
             })
-            .catch(err => Swal.fire('Good job!', err.message, 'error'))
+            .catch(err => Swal.fire('Oops!', err.message, 'error'))
     }
 
     return (
