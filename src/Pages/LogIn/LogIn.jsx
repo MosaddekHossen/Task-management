@@ -1,44 +1,44 @@
-// import { useContext } from "react";
+import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-// import Swal from "sweetalert2";
+import Swal from "sweetalert2";
 // import { Helmet } from "react-helmet-async";
-// import { AuthContext } from "../../Provider/AuthProvider";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Login = () => {
-    // const navigate = useNavigate();
-    // const location = useLocation();
-    // const { signIn, googleLogin } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const { signIn, googleLogin } = useContext(AuthContext);
 
     // Login User
     const handleLogin = (e) => {
         e.preventDefault();
-        // const email = e.target.email.value;
-        // const password = e.target.password.value;
+        const email = e.target.email.value;
+        const password = e.target.password.value;
 
-        // signIn(email, password)
-        //     .then(res => {
-        //         console.log(res.user)
-        //         Swal.fire('Good job!', 'Success Sign In!', 'success')
-        //         e.target.reset();
-        //         navigate("/");
-        //         navigate(location?.state ? location?.state : '/');
-        //     })
-        //     .catch(err => {
-        //         console.log(err.message)
-        //         Swal.fire('Oops!', err.message, 'error')
-        //     })
+        signIn(email, password)
+            .then(res => {
+                console.log(res.user)
+                Swal.fire('Good job!', 'Success Sign In!', 'success')
+                e.target.reset();
+                navigate("/");
+                navigate(location?.state ? location?.state : '/');
+            })
+            .catch(err => {
+                console.log(err.message)
+                Swal.fire('Oops!', err.message, 'error')
+            })
     }
 
     // Google Login
-    // const handleGoogleLogin = () => {
-    //     googleLogin()
-    //         .then(() => {
-    //             Swal.fire('Good job!', 'Google Login Successful!', 'success');
-    //             // navigate('/');
-    //             navigate(location?.state ? location?.state : '/');
-    //         })
-    //         .catch(err => Swal.fire('Good job!', err.message, 'error'))
-    // }
+    const handleGoogleLogin = () => {
+        googleLogin()
+            .then(() => {
+                Swal.fire('Good job!', 'Google Login Successful!', 'success');
+                // navigate('/');
+                navigate(location?.state ? location?.state : '/');
+            })
+            .catch(err => Swal.fire('Good job!', err.message, 'error'))
+    }
 
     return (
         <div className="w-full max-w-md mx-auto mt-28 mb-6 px-6 md:px-0">
@@ -74,8 +74,7 @@ const Login = () => {
                     </div>
                 </div>
                 <div className="divider my-6">Or</div>
-                <button  className="text-[16px] hover:text-[#393939] font-normal border p-2 flex justify-between btn-block rounded-full">
-                    {/* onClick={handleGoogleLogin} */}
+                <button onClick={handleGoogleLogin} className="text-[16px] hover:text-[#393939] font-normal border p-2 flex justify-between btn-block rounded-full">
                     <svg xmlns="http://www.w3.org/2000/svg" width="31" height="32" viewBox="0 0 31 32" fill="none">
                         <g>
                             <path d="M30.9999 16.2335C30.9999 15.1547 30.9128 14.0702 30.7268 13.0089H15.8108V19.1198H24.3525C23.998 21.0907 22.8592 22.8342 21.1915 23.9421V27.9071H26.2875C29.28 25.1432 30.9999 21.0615 30.9999 16.2335Z" fill="#4285F4" />

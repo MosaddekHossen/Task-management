@@ -1,20 +1,20 @@
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { Link, useNavigate } from "react-router-dom";
-// import { updateProfile } from "firebase/auth";
+import { updateProfile } from "firebase/auth";
 import Swal from "sweetalert2";
 import { useContext, useState } from "react";
-// import { AuthContext } from '../../Provider/AuthProvider';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const SignUp = () => {
     const [showPassword, setShowPassword] = useState(false);
-    // const { signUp } = useContext(AuthContext);
-    // const navigate = useNavigate();
+    const { signUp } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleRegister = (e) => {
         e.preventDefault();
-        // const name = e.target.name.value;
-        // const image = e.target.img.value;
-        // const email = e.target.email.value;
+        const name = e.target.name.value;
+        const image = e.target.img.value;
+        const email = e.target.email.value;
         const password = e.target.password.value;
         const accepted = e.target.terms.checked;
         // console.log(accepted)
@@ -35,31 +35,31 @@ const SignUp = () => {
             return;
         }
 
-        // signUp(email, password)
-        //     .then(res => {
-        //         console.log(res.user)
-        //         Swal.fire('Good job!', 'User Created Successfully!', 'success')
-        //         e.target.reset();
-        //         navigate("/");
+        signUp(email, password)
+            .then(res => {
+                console.log(res.user)
+                Swal.fire('Good job!', 'User Created Successfully!', 'success')
+                e.target.reset();
+                navigate("/");
 
-        //         // Update Profile
-        //         updateProfile(res.user, {
-        //             displayName: name,
-        //             photoURL: image
-        //         })
-        //             .then(() => {
-        //                 // console.log("Update Profile!")
-        //                 window.location.reload();
-        //             })
-        //             .catch(err => {
-        //                 Swal.fire('Oops!', err.message, 'error')
-        //                 console.log(err.message)
-        //             })
-        //     })
-        //     .catch(err => {
-        //         console.log(err.message)
-        //         Swal.fire('Oops!', err.message, 'error')
-        //     })
+                // Update Profile
+                updateProfile(res.user, {
+                    displayName: name,
+                    photoURL: image
+                })
+                    .then(() => {
+                        // console.log("Update Profile!")
+                        window.location.reload();
+                    })
+                    .catch(err => {
+                        Swal.fire('Oops!', err.message, 'error')
+                        console.log(err.message)
+                    })
+            })
+            .catch(err => {
+                console.log(err.message)
+                Swal.fire('Oops!', err.message, 'error')
+            })
     }
 
     return (
