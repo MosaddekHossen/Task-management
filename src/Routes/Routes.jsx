@@ -9,6 +9,8 @@ import Private from "../Components/Private/Private";
 import IntroDashboard from "../Pages/Dashboard/IntroDashboard/IntroDashboard";
 import Dashboard from "../Pages/Dashboard/Dashboard/Dashboard";
 import Profile from "../Pages/Dashboard/Profile/Profile";
+import AddTask from "../Pages/Dashboard/AddTask/AddTask";
+import Tasks from "../Pages/Dashboard/Tasks/Tasks";
 
 const Routes = createBrowserRouter([
     {
@@ -45,6 +47,14 @@ const Routes = createBrowserRouter([
             {
                 path: "profile",
                 element: <Profile />
+            },
+            {
+                path: "addTask",
+                element: <AddTask />
+            },
+            {
+                path: "tasks",
+                element: <Tasks />
             }
         ]
     }

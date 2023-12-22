@@ -1,6 +1,5 @@
 import { FaClipboard, FaHome, FaRegQuestionCircle, FaUser } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
-import { SiGoogleclassroom } from "react-icons/si";
 
 const Dashboard = () => {
 
@@ -13,11 +12,9 @@ const Dashboard = () => {
                     <NavLink className={({ isActive }) => isActive ? "btn btn-primary text-[16px] font-semibold" : "btn btn-info text-[16px] font-semibold"}
                         to={'profile'}><FaUser />Profile</NavLink>
                     <NavLink className={({ isActive }) => isActive ? "btn btn-primary text-[16px] font-semibold" : "btn btn-info text-[16px] font-semibold"}
-                        to={'/dashboard/teacherRequest'}><FaRegQuestionCircle />Teacher Request</NavLink>
+                        to={'addTask'}><FaRegQuestionCircle />Add Task</NavLink>
                     <NavLink className={({ isActive }) => isActive ? "btn btn-primary text-[16px] font-semibold" : "btn btn-info text-[16px] font-semibold"}
-                        to={'/dashboard/adminAllClasses'}><FaClipboard />All Classes</NavLink>
-                    <NavLink className={({ isActive }) => isActive ? "btn btn-primary text-[16px] font-semibold" : "btn btn-info text-[16px] font-semibold"}
-                        to={'/dashboard/users'}><SiGoogleclassroom />Users</NavLink>
+                        to={'tasks'}><FaClipboard />Tasks</NavLink>
 
                     {/* Shared nav link */}
                     <div className="divider divider-success">Back to ...</div>

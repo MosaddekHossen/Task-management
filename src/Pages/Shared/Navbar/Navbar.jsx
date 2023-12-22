@@ -16,6 +16,26 @@ const Header = () => {
             .catch((err) => Swal.fire('Oops!', err.message, 'error'))
     }
 
+    const navLinkMd = <>
+        <ul className="menu flex flex-col gap-2 menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52 bg-slate-400 text-white">
+            <NavLink
+                to={'/'}
+                className={({ isPending, isActive }) => isPending ? "bg-[#92a1eb] hover:bg-[#92a1eb] text-white btn text-[14px] font-semibold" : isActive ? "btn bg-[#fff] text-[14px] font-semibold border-none" : "btn bg-[#616d7b81] border-none hover:bg-[#2d3434] text-white text-[14px] font-semibold"}>
+                Home
+            </NavLink>
+
+            <NavLink to={'/dashboard'}
+                className={({ isPending, isActive }) => isPending ? "bg-[#92a1eb] hover:bg-[#92a1eb] text-white btn text-[14px] font-semibold" : isActive ? "btn bg-[#fff] text-[14px] font-semibold border-none" : "btn bg-[#616d7b81] border-none hover:bg-[#2d3434] text-white text-[14px] font-semibold"}                       >
+                Dashboard
+            </NavLink>
+
+            <NavLink to={'/signUp'}
+                className={({ isPending, isActive }) => isPending ? "bg-[#92a1eb] hover:bg-[#92a1eb] text-white btn text-[14px] font-semibold" : isActive ? "btn bg-[#fff] text-[14px] font-semibold border-none" : "btn bg-[#616d7b81] border-none hover:bg-[#2d3434] text-white text-[14px] font-semibold"}                      >
+                Sign Up
+            </NavLink>
+        </ul>
+    </>
+
     const navLink = <>
         <ul className="menu menu-horizontal px-1 lg:flex gap-1 hidden">
 
@@ -25,34 +45,14 @@ const Header = () => {
                 Home
             </NavLink>
 
-            <NavLink to={'/tasks'}
+            <NavLink to={'/dashboard'}
                 className={({ isPending, isActive }) => isPending ? "bg-[#92a1eb] hover:bg-[#92a1eb] text-white btn text-[14px] font-semibold" : isActive ? "btn bg-[#fff] text-[14px] font-semibold border-none" : "btn bg-[#616d7b81] border-none hover:bg-[#2d3434] text-white text-[14px] font-semibold"}                       >
-                Tasks
+                Dashboard
             </NavLink>
 
-            <NavLink to={'/calendar'}
+            <NavLink to={'/signUp'}
                 className={({ isPending, isActive }) => isPending ? "bg-[#92a1eb] hover:bg-[#92a1eb] text-white btn text-[14px] font-semibold" : isActive ? "btn bg-[#fff] text-[14px] font-semibold border-none" : "btn bg-[#616d7b81] border-none hover:bg-[#2d3434] text-white text-[14px] font-semibold"}                      >
-                Calendar
-            </NavLink>
-        </ul>
-    </>
-
-    const navLinkMd = <>
-        <ul className="menu flex flex-col gap-2 menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52 bg-slate-400 text-white">
-            <NavLink
-                to={'/'}
-                className={({ isPending, isActive }) => isPending ? "bg-[#92a1eb] hover:bg-[#92a1eb] text-white btn text-[14px] font-semibold" : isActive ? "btn bg-[#fff] text-[14px] font-semibold border-none" : "btn bg-[#616d7b81] border-none hover:bg-[#2d3434] text-white text-[14px] font-semibold"}>
-                Home
-            </NavLink>
-
-            <NavLink to={'/tasks'}
-                className={({ isPending, isActive }) => isPending ? "bg-[#92a1eb] hover:bg-[#92a1eb] text-white btn text-[14px] font-semibold" : isActive ? "btn bg-[#fff] text-[14px] font-semibold border-none" : "btn bg-[#616d7b81] border-none hover:bg-[#2d3434] text-white text-[14px] font-semibold"}                       >
-                Tasks
-            </NavLink>
-
-            <NavLink to={'/calendar'}
-                className={({ isPending, isActive }) => isPending ? "bg-[#92a1eb] hover:bg-[#92a1eb] text-white btn text-[14px] font-semibold" : isActive ? "btn bg-[#fff] text-[14px] font-semibold border-none" : "btn bg-[#616d7b81] border-none hover:bg-[#2d3434] text-white text-[14px] font-semibold"}                      >
-                Calendar
+                Sign Up
             </NavLink>
         </ul>
     </>
